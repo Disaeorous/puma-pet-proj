@@ -1,0 +1,97 @@
+@use "../../globals/vars" as *;
+
+.modal {
+	display: none;
+	width: 100%;
+	max-width: 50rem;
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 10;
+
+	border: 2px solid $accent;
+	border-radius: .5rem;
+
+	transform: translate(-50%, -50%);
+	background-color: adjust-color($text-blue, $alpha: -0.8);
+
+	&.show {
+		display: block;
+	}
+
+	&.hide {
+		display: none;
+	}
+
+	&-close {
+		position: absolute;
+    top: 0;
+    right: 0.8rem;
+    z-index: 1;
+
+    font-size: $fz-22;
+    line-height: $lh-22;
+    cursor: pointer;
+
+
+    &:after {
+			content: "";
+			width: 2.3rem;
+	    height: 2.3rem;
+
+	    position: absolute;
+	    top: 0.5rem;
+	    left: -0.5rem;
+	    z-index: -1;
+
+	    background-color: adjust-color($accent, $alpha: -0.2);
+	    border-radius: 50%;
+    	transition: background-color .15s ease-in-out, color .15s ease-in-out;
+    }
+
+   	&:hover {
+ 			color: $text-blue;
+
+   		&:after {
+				background-color: adjust-color($accent, $alpha: -0.7);
+				box-shadow: 0 1px 2rem 1px adjust-color($accent, $alpha: -0.6);
+   		}
+		}
+	}
+
+	&-content {
+		position: relative;
+    padding: 2rem;
+    gap: 2rem;
+
+    display: flex;
+    flex-direction: column;
+
+
+		&__box {
+			display: flex;
+			align-content: center;
+			width: 100%;
+		}
+
+		&__item {
+			width: 25%;
+			text-align: center;
+		}
+		
+
+		&__title {
+			color: $text-blue;
+			font-size: $fz-16;
+			line-height: $lh-16;
+			font-weight: 400;
+		}
+
+		&__text {
+			color: $text-black;
+			font-size: $fz-18;
+			line-height: $lh-18;
+		}
+	}
+}

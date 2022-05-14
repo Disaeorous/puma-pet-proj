@@ -1,0 +1,8 @@
+@use "../../globals/vars" as *;
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-block: 4rem;
+}

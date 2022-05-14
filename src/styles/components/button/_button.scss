@@ -1,0 +1,25 @@
+@use "../../globals/vars" as *;
+@use "../../helpers" as *;
+@use "sass:color";
+
+.btn {
+	display: inline-block;
+	background-color: $accent;
+	border: none;
+	border-radius: .5rem;
+	cursor: pointer;
+	z-index: 10;
+}
+
+.cta-order {
+	transition: background-color .15s ease-in-out, box-shadow .25s ease;
+	padding-block: .88em;
+	padding-inline: 1.77em;
+	
+	color: #fff;
+	
+	&:hover {
+		background-color: adjust-color($accent, $alpha: -0.15);
+		box-shadow: 0 1px 2rem 1px adjust-color($accent, $alpha: -0.6);
+	}
+}

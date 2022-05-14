@@ -1,0 +1,31 @@
+@use "../../globals/vars" as *;
+@use "../../helpers" as *;
+@use "sass:color";
+
+.about {
+	margin-top: 4rem;
+	border: 2px solid $accent;
+	position: relative;
+	height: 100vh;
+
+	&:after {
+		content: "";
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		z-index: -1;
+
+		width: 100%;
+		height: auto;
+		background-image: url(../../graphics/icon/intro-bg.svg);
+		background-repeat: no-repeat;
+		background-size: auto;
+	}
+
+	&-title {
+		margin-top: 2rem;
+		text-align: center;
+	}
+}
